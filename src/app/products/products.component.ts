@@ -1,6 +1,6 @@
 import { Expansion } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
   products: Product[]= [];
   mybutton: any;
-  categoryControl = new FormControl('all');
+  categoryControl = new UntypedFormControl('all');
   searchParams?: RegExp;
 
   constructor(productService: ProductService, private route: ActivatedRoute) {

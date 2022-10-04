@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Product, ProductUpload } from '../product'
 import { ProductService } from '../product.service';
 
@@ -43,7 +43,7 @@ export class AddNewProductComponent implements OnInit {
     },
   ]
 
-  typeControl = new FormControl(this.productTypes [0].subtypes [0]);
+  typeControl = new UntypedFormControl(this.productTypes [0].subtypes [0]);
 
   constructor(private productService: ProductService) { }
 
