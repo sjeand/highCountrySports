@@ -1,0 +1,20 @@
+<!--Card for products-->
+<mat-card class="product-card">
+  <!--Product Image-->
+  <img mat-card-image width="25%" height="300" [src]="product.image">
+  <!--Product Maker and Price-->
+    <div class="maker-price-container">
+      <mat-card-title class="maker">{{ product.maker }}</mat-card-title>
+      <mat-card-title class="price">{{ product.price | currency }}</mat-card-title>
+    </div>
+    <!--Product Model-->
+    <div class="model-container">
+      <mat-card-subtitle class="model">{{ product.model }}</mat-card-subtitle>
+    </div>
+    <!--See details button-->
+      <mat-card-actions>
+        <mat-button-toggle class="details" [routerLink]="['/single-product', product.id]">See Details</mat-button-toggle>
+      </mat-card-actions>
+    </mat-card>
+
+

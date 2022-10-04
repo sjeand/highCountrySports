@@ -1,0 +1,102 @@
+.container {
+  width: 90%;
+  min-height: 70vh;
+  margin: 20px 0 20px 5%;
+}
+
+//Styling for product headings
+.heading {
+  padding: 20px 10px 10px 10px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.maker {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.model {
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.price {
+  font-size: 2.5rem;
+}
+
+// Styling for layout within card
+
+.columns{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.right-column {
+  width: 35%;
+
+}
+
+
+.rows{
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  width: 100%;
+ }
+
+.details{
+  text-align: left;
+}
+
+td{
+  padding: 2px;
+}
+
+.left-column {
+  width: 55%;
+}
+
+.container .columns .left-column{
+  margin-right: 0;
+}
+
+.product-image {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #ebdfd2;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-product-image {
+    display: block;
+  }
+
+  .desktop-product-image {
+    display: none;
+  }
+
+  .image-column {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .mobile-product-image {
+    display: none;
+  }
+
+  .desktop-product-image {
+    display: block;
+  }
+}

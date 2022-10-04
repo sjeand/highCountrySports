@@ -1,0 +1,39 @@
+.dialog{
+  width: 100%;
+  height: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+button {
+  background-color: #ebdfd2;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.checkboxes {
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 4px;
+}
+
+mat-checkbox {
+  margin-left: 2px;
+  margin-right: 10px;
+}

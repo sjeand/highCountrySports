@@ -1,0 +1,53 @@
+<!--????CAROUSEL GOES HERE????-->
+<!--Image slide show-->
+<div class="slide-show">
+  <img class="images" src="../../assets/placeholder.jpg">
+</div>
+
+<!--Main content displaying announcements-->
+<div class="homepage-content">
+  <div class="banner">
+    <h2>Announcements</h2>
+  </div>
+
+  <!--display announcements in two columns-->
+  <div class="multi-column-layout">
+  <div class="row">
+
+    <!--left column-->
+    <div class="column">
+      <ng-container
+        *ngFor="
+          let announcement of announcements;
+          let even = even;
+          let odd = odd
+        "
+      >
+      <app-new-announcement *ngIf="even" [announcement]="announcement"></app-new-announcement>
+      </ng-container>
+    </div>
+
+    <!--right column-->
+    <div class="column">
+      <ng-container
+        *ngFor="
+          let announcement of announcements;
+          let even = even;
+          let odd = odd
+        "
+      >
+      <app-new-announcement *ngIf="odd" [announcement]="announcement"></app-new-announcement>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<!--Display single column for phones and small screens-->
+  <div class="single-column-layout">
+    <ng-container
+    *ngFor="
+      let announcement of announcements"
+    >
+    <app-new-announcement [announcement]="announcement"></app-new-announcement>
+
+    </ng-container>
+  </div>

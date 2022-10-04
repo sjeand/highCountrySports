@@ -1,0 +1,33 @@
+<!--Heading-->
+<div class="header">
+  <h1>Gun Shows</h1>
+  <h2>High Country Sports will be at the events listed below. Please stop by our booth to see us and some of our inventory in person!</h2>
+</div>
+
+<!--Div to contain all about page content-->
+<div class="gunshows-page ">
+  <!--tablet to display gunshows-->
+  <!--???? GUNSHOWS TO EXPIRE AFTER PAST DATE ????-->
+  <div class="mdc-data-table">
+    <div class="mdc-data-table__table-container">
+      <table class="mdc-data-table__table" >
+        <!--Table Headings-->
+        <thead>
+          <tr class="mdc-data-table__header-row">
+            <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Gun Show</th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Location</th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Date/Time</th>
+          </tr>
+        </thead>
+        <!--Table contents-->
+        <tbody class="mdc-data-table__content">
+          <tr class="mdc-data-table__row" *ngFor="let gunshow of gunshows">
+            <td class="mdc-data-table__cell" scope="row">{{ gunshow.name }}</td>
+            <td class="mdc-data-table__cell mdc-data-table__cell--numeric">{{ gunshow.location }}</td>
+            <td class="mdc-data-table__cell mdc-data-table__cell--numeric">{{ gunshow.when }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

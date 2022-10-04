@@ -1,0 +1,124 @@
+/*Search bar styling*/
+.search-bar {
+  padding: 10px;
+  direction: rtl;
+  background-color: #7E431D;
+  display: flex;
+}
+
+.search {
+  width: 20%;
+  font-size: 18px;
+  display: block;
+  direction: ltr;
+  padding: 6px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  border: none;
+
+}
+
+
+/*logo/slogan bar styling*/
+.logo-bar {
+  height: 15%;
+  background-color: #7E431D;
+  display: flex;
+  align-items: baseline;
+}
+
+h1{
+  font-size: 65px;
+  color: white;
+  padding-left: 40px;
+  padding-top: 40px;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: underline;
+
+}
+
+.vl{
+  color: white;
+  font-weight: 100;
+  text-decoration: none;
+  padding-left: 14px;
+}
+
+h2{
+  color: white;
+  font-weight: 100;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.shoot {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/*nav bar styling*/
+.topnav {
+  background-color:#2D2B1B;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+
+/* Changes weight and adds underline on hover*/
+.topnav a:hover {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* Styling for phones/small screens */
+@media screen and (max-width: 600px) {
+
+  /*Search bar styling - PHONE*/
+  .search-bar{
+    padding: 10px;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /*logo/slogan bar styling- PHONE*/
+  .logo-bar {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  h1{
+    font-size: 44px;
+    padding-left: 0;
+  }
+
+  .vl{
+    display: none;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  /*nav bar styling - PHONE*/
+  .topnav {
+    padding: 15px;
+  }
+
+  a {
+    font-size: 18px;
+  }
+}

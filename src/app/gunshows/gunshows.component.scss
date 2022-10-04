@@ -1,0 +1,61 @@
+/* Heading styling */
+.header {
+  background-color:#B6B5AF;
+  margin: 0;
+  text-align: center;
+
+}
+
+h1, h2 {
+  padding: 10px;
+  background-color:#B6B5AF;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 45px;
+  text-decoration: underline;
+  padding-top: 20px;
+  font-weight: 300;
+}
+
+h2{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/*Styling for table*/
+table, th, td {
+  text-align: left;
+
+}
+
+td, th {
+  padding: 20px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+table{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
+  background-color: white;
+
+}
+
+ thead{
+   background-color:#2D2B1B;
+   color: white;
+ }
+
+/* Styling for phones/small screens */
+@media screen and (max-width: 600px) {
+  /* Make Heading two smaller on mobile - PHONE */
+  h2{
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

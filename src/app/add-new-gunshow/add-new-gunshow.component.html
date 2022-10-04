@@ -1,0 +1,22 @@
+<form class="new-gunshow-form">
+  <h1>Add Gunshow</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input [(ngModel)]="gunshow.name" name="name"  matInput required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Location</mat-label>
+    <input [(ngModel)]="gunshow.location" name="location" matInput required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Dates 	&#38; Times</mat-label>
+    <textarea [(ngModel)]="gunshow.when" name="when" matInput required></textarea>
+  </mat-form-field>
+
+  <button (click)="addGunshow()" mat-raised-button>Add New Gun Show</button>
+</form>
+
+

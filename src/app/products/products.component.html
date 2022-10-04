@@ -1,0 +1,69 @@
+<!--Page content-->
+<div class="content">
+
+  <!--Heading-->
+  <h1>Products</h1>
+
+  <!--Buttons to filter products-->
+  <div class="buttons">
+
+    <mat-button-toggle-group [formControl]="categoryControl">
+      <mat-button-toggle class="shop-all" value="all">Shop All</mat-button-toggle>
+
+      <mat-button-toggle class= "all-hand-guns product-category" value="Hand gun">All Hand Guns</mat-button-toggle>
+      <mat-button-toggle value="Revolver">Revolvers</mat-button-toggle>
+      <mat-button-toggle value="Semi-automatic">Semi-Automatic</mat-button-toggle>
+
+      <mat-button-toggle value="Long Gun" class= "all-long-guns product-category">All Long Guns</mat-button-toggle>
+      <mat-button-toggle value="Rifle">Rifles</mat-button-toggle>
+      <mat-button-toggle value="Shotgun">Shotguns</mat-button-toggle>
+
+      <mat-button-toggle class= "all-other product-category" value="Other">Other</mat-button-toggle>
+      <mat-button-toggle value="Accessory">Accessories</mat-button-toggle>
+      <mat-button-toggle value="Ammunition">Ammunition</mat-button-toggle>
+      <mat-button-toggle value="Part">Parts</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <!--???? CREATE DROP DOWNS FOR SMALL SCREENS ????-->
+  <mat-form-field class="drop-down" appearance="fill">
+    <mat-label>Filter Products</mat-label>
+    <select matNativeControl required>
+      <option panelClass="bold" value="all"><strong>Shop All</strong></option>
+      <option value="Hand gun">Hand Guns</option>
+      <option value="Semi-automatic" >Semi-Automatic</option>
+      <option value="Revolver">Revolvers</option>
+      <option value="Long Gun">Long Guns</option>
+      <option value="Rifle">Rifles</option>
+      <option value="Shotgun">Shotguns</option>
+      <option value="Other">Other</option>
+      <option value="Ammunition">Ammunition</option>
+      <option value="Part">Parts</option>
+      <option value="Accessory">Accessories</option>
+    </select>
+  </mat-form-field>
+
+  <!--Cards displaying products-->
+  <div class="cards w3-row" >
+    <div *ngFor="let product of products">
+      <app-product-detail
+          class="card w3-quarter"
+          *ngIf="(!!searchParams &&
+          (product.maker.match(searchParams) ||
+          product.model.match(searchParams) ||
+          product.price.toString().match(searchParams))) ||
+          (!searchParams && (categoryControl.value === 'all' ||
+          product.type === categoryControl.value ||
+          product.subtype === categoryControl.value))"
+          [product]="product">
+      </app-product-detail>
+    </div>
+  </div>
+
+  <!--arrow to scroll to top-->
+  <button class="arrow" (click)="topFunction()" id="myBtn" title="Go to top">
+    <i class="return-to-top fa-solid fa-circle-arrow-up fa-2x"></i>
+  </button>
+</div>
+
+

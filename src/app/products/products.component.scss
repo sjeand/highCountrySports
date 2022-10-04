@@ -1,0 +1,100 @@
+$background:#B6B5AF;
+
+/* Heading styling */
+h1 {
+  font-weight: 300;
+  font-size: 45px;
+  padding-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Styling for products */
+.content{
+  background-color:$background;
+}
+
+
+// Button styling //
+.buttons{
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 8px;
+}
+
+mat-button-toggle-group{
+  background-color:#2D2B1B;
+  border-color:$background;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+mat-button-toggle{
+  background-color:#2D2B1B;
+  color: white;
+}
+
+
+// lighten background cover on hover & bold font //
+mat-button-toggle:hover {
+  background-color: #424032;
+  font-weight: 400;
+}
+
+.buttons mat-button-toggle-group {
+  mat-button-toggle.product-category{
+    border-left-width: 2rem;
+    border-left-color: $background;
+  }
+  mat-button-toggle:not(.shop-all){
+    ::ng-deep .mat-button-toggle-label-content{
+      inset-inline-start: 1.25rem;
+    }
+  }
+}
+.product-category, .shop-all{
+  background-color:#2D2B1B;
+  color: white;
+  font-weight: 400;
+
+}
+
+.drop-down{
+  display: none;
+}
+// End of button styling //
+
+
+// Product cards styling //
+.card {
+  padding: 10px;
+}
+
+
+// Styling for different screen sizes //
+@media only screen and (max-width: 600px) {
+  :host {
+    display: block;
+  }
+
+  // Button styling - PHONE //
+
+  mat-button-toggle-group{
+  display: none;
+  }
+
+  .buttons{
+    display: none;
+  }
+
+  .drop-down{
+    display: block;
+    padding: 8px 8px 0 8px;
+  }
+
+}
+
