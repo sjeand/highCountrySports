@@ -1,6 +1,7 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Announcement } from 'src/app/announcement';
-import { AnnouncementService } from '../announcement.service';
+import { AnnouncementService } from '../services/announcement.service';
 
 @Component({
   selector: 'app-new-announcement',
@@ -10,8 +11,9 @@ import { AnnouncementService } from '../announcement.service';
 export class NewAnnouncementComponent implements OnInit {
 
   @Input() announcement!: Announcement;
+  admin = true;
 
-  constructor() {
+  constructor(private announcementService: AnnouncementService) {
     this.announcement = {
       title: '',
       subtitle: '',
@@ -23,4 +25,5 @@ export class NewAnnouncementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteAnnouncement(){};
 }

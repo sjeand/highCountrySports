@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { Product, ProductUpload } from '../product'
-import { ProductService } from '../product.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-add-new-product',

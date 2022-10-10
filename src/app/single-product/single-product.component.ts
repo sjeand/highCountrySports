@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
-import { ProductService } from '../product.service';
+import { ProductService } from '../services/product.service';
 import { RequestToPurchaseDialogComponent } from '../request-to-purchase-dialog/request-to-purchase-dialog.component';
 
 @Component({

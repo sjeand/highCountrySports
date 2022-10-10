@@ -1,7 +1,12 @@
 <mat-card class="new-annoucement-card">
+  <div class="admin">
+    <i class="fa fa-trash"></i>
+    <i  class="fa fa-edit"></i>
+  </div>
+
   <mat-card-title>{{ announcement.title }}</mat-card-title>
   <mat-card-subtitle>{{ announcement.subtitle }}</mat-card-subtitle>
-  <span class="text">{{ announcement.text }}</span>
+  <div class="text">{{ announcement.text }}</div>
   <!-- <img *ngIf="announcement.image" mat-card-image [src]="announcement.image"> -->
 </mat-card>
 

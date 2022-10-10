@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/product';
 
 @Component({
   selector: 'app-request-to-purchase-dialog',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestToPurchaseDialogComponent implements OnInit {
 
-  constructor() { }
+  @Input() product: Product;
+
+  constructor() {
+    this.product = {
+      id: 0,
+      price: 0,
+      maker: '',
+      model: '',
+      description: '',
+      image: '',
+      type: '',
+      subtype: '',
+
+    }
+   }
 
   ngOnInit(): void {
   }

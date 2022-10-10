@@ -6,6 +6,14 @@
       <!-- [formGroup]="purchaseForm" -->
     <div class="form">
       <mat-form-field appearance="fill">
+        <mat-label>{{ product.maker }}</mat-label>
+        <input readonly matInput type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ product.model }}</mat-label>
+        <input readonly matInput type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
         <mat-label>Full Name</mat-label>
         <input matInput type="text" id="name">
       </mat-form-field>

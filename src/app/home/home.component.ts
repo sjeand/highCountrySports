@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Announcement } from '../announcement';
-import { AnnouncementService } from '../announcement.service';
+import { AnnouncementService } from '../services/announcement.service';
 
 
 @Component({

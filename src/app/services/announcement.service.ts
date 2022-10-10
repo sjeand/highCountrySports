@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Announcement } from './announcement';
+import { Announcement } from '../announcement';
 
 
 @Injectable({
@@ -17,6 +17,10 @@ export class AnnouncementService {
 
   createAnnouncement(announcement: Announcement) {
     return this.httpClient.post<Announcement>("/announcements", announcement);
+  }
+
+  deleteAnnouncement(announcement: Announcement){
+    return this.httpClient.delete(`/announcements/${announcement._id}`);
   }
 
  /*  uploadFile(file: File){

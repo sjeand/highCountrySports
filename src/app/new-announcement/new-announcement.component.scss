@@ -1,19 +1,28 @@
+.admin{
+  font-size: 18px;
+    i{
+      padding: 4px;
+    }
+}
+
 mat-card-title {
   font-size: 20px;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  text-align: center;
 }
 
 mat-card-subtitle {
   font-size: 20px;
+  text-align: center;
 }
 
 mat-card {
-  text-align: center;
-
+  padding: 4px;
 }
 
 .text {
   font-size: 16px;
+  text-align: center;
 }
 
 img {

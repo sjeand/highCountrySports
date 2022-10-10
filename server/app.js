@@ -11,33 +11,34 @@ const productModel = require('./models/product');
 const gunshowModel = require('./models/gunshow');
 const announcementModel = require('./models/announcement');
 const mongoose = require('mongoose');
-var nodemailer = require('nodemailer');
-var multer  = require('multer');
-var Gallery = require('../models/Gallery.js');
-var galleryRouter = require('./routes/gallery');
 
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/images');
-  },
-  filename: (req, file, cb) => {
-    console.log(file);
-    var filetype = '';
-    if(file.mimetype === 'image/gif') {
-      filetype = 'gif';
-    }
-    if(file.mimetype === 'image/png') {
-      filetype = 'png';
-    }
-    if(file.mimetype === 'image/jpeg') {
-      filetype = 'jpg';
-    }
-    cb(null, 'image-' + Date.now() + '.' + filetype);
+//Send customer information to email as purchase request using nodemailer.
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'hcsllcpurchaserequest@gmail.com',
+    pass: 'tbtpbnuneqmynftj'
   }
 });
 
-var upload = multer({storage: storage});
+var mailOptions = {
+  from: '"High Country Sports LLC" <hcsllcpurchaserequest@gmail.com>',
+  to: 'sjeand@hotmail.com',
+  subject: 'High Country Sports LLC Customer Purchase Request',
+  text: 'Customers info will display here...'
+};
 
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent');
+//   }
+// });
+
+// Database connection.
 mongoose.connect("mongodb+srv://AdminHCS:highCountrySportsLLC123@highcountrysportsllc.slsatny.mongodb.net/?retryWrites=true&w=majority")
   .then(()=>{
     console.log("Connected to database");
@@ -54,11 +55,14 @@ app.route('/request-to-purchase-dialog').get(function(req, res) {
 app.use(cors());
 app.use(fileUpload());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.urlencoded({
-  extend: false
+  extended: true
 }));
 app.use(express.json());
-app.use('/gallery', galleryRouter);
+
 
 //API Gets
 app.route('/announcements').get( function (req, res) {
@@ -88,21 +92,6 @@ app.route('/announcements').get( function (req, res) {
  });
 
  //API Posts
- router.post('/', upload.single('file'), function(req, res, next) {
-  if(!req.file) {
-      return res.status(500).send({ message: 'Upload fail'});
-  } else {
-      req.body.imageUrl = 'http://192.168.0.7:3000/images/' + req.file.filename;
-      Gallery.create(req.body, function (err, gallery) {
-          if (err) {
-              console.log(err);
-              return next(err);
-          }
-          res.json(gallery);
-      });
-  }
-});
-
  app.route('/gunshows-list').post( function (req, res) {
   // gunshows.push(req.body);
   const gunshow = new gunshowModel({
@@ -116,6 +105,20 @@ app.route('/announcements').get( function (req, res) {
       message: 'it worked'
     });
  });
+
+ app.route('/gunshows-list/:id').delete(function(req, res){
+  const gunshowId = req.params.id;
+  console.log(gunshowId);
+  res.status(400);
+    gunshowModel.deleteOne({_id: gunshowId}, (err, d) => {
+      if (err) return res.status(400);
+      (d.acknowledged && d.deletedCount == 1);
+      console.log("Deleted Successfully");   // Use your response code
+        /* else
+          console.log("Record doesn't exist or already deleted")    // Use your response code */
+    })
+ })
+
 
  app.route('/announcements').post( function (req, res) {
   const announcement = new announcementModel({

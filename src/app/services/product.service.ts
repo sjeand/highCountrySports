@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { Product, ProductUpload} from './product';
+import { Product, ProductUpload} from '../product';
 
 
 

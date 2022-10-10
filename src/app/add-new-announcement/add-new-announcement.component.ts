@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError } from 'rxjs';
 import { Announcement} from '../announcement';
-import { AnnouncementService } from '../announcement.service';
+import { AnnouncementService } from '../services/announcement.service';
 
 @Component({
   selector: 'app-add-new-announcement',

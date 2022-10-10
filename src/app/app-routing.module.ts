@@ -10,6 +10,8 @@ import { AddNewAnnouncementComponent } from './add-new-announcement/add-new-anno
 import { AddNewGunshowComponent } from './add-new-gunshow/add-new-gunshow.component';
 import { ProductImageComponent } from './product-image/product-image.component';
 import { PoliciesComponent } from './policies/policies.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+
 
 const routes: Routes = [
   { path: 'products/:search', component: ProductsComponent },
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'add-new-gunshow', component: AddNewGunshowComponent },
   { path: 'product-image', component: ProductImageComponent },
   { path: 'policies', component: PoliciesComponent},
+  { path: 'sign-in', component: SignInComponent},
 ];
 
 @NgModule({

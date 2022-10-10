@@ -17,6 +17,7 @@
             <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Gun Show</th>
             <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Location</th>
             <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Date/Time</th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col" *ngIf="admin"></th>
           </tr>
         </thead>
         <!--Table contents-->
@@ -25,6 +26,12 @@
             <td class="mdc-data-table__cell" scope="row">{{ gunshow.name }}</td>
             <td class="mdc-data-table__cell mdc-data-table__cell--numeric">{{ gunshow.location }}</td>
             <td class="mdc-data-table__cell mdc-data-table__cell--numeric">{{ gunshow.when }}</td>
+            <td class="mdc-data-table__cell mdc-data-table__cell--numeric" *ngIf="admin">
+              <i (click)="deleteGunshow(gunshow)" class="fa fa-trash"></i>
+              &nbsp;
+              <a routerLink="/edit-gunshow/{{ gunshow._id }}"><i  class="fa fa-edit"></i></a>
+
+            </td>
           </tr>
         </tbody>
       </table>

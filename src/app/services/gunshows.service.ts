@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { Gunshow } from './gunshows';
+import { Gunshow } from '../gunshows';
 
 
 @Injectable({
@@ -20,4 +20,10 @@ export class GunshowsService {
   createGunshow(gunshow: Gunshow) {
     return this.httpClient.post<Gunshow>("/gunshows-list",  gunshow);
   }
+
+  deleteGunshow(gunshow: Gunshow){
+    return this.httpClient.delete(`/gunshows-list/${gunshow._id}`);
+  }
+
 }
+
